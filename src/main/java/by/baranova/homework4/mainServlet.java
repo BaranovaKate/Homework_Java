@@ -24,7 +24,8 @@ public class mainServlet extends HttpServlet {
         if (!validateUserData(username, password, firstName, lastName, dob, phoneNumber)) {
             request.setAttribute("errorMessage", "Проверьте правильность введённых данных");
             request.getRequestDispatcher("/createUser.jsp").forward(request, response);
-        } else {
+        } else
+        {
             request.setAttribute("username", username);
             request.setAttribute("firstName", firstName);
             request.setAttribute("lastName", lastName);

@@ -10,7 +10,6 @@
         window.addEventListener("DOMContentLoaded", function () {
             [].forEach.call(document.querySelectorAll('.tel'), function (input) {
                 var keyCode;
-
                 function mask(event) {
                     event.keyCode && (keyCode = event.keyCode);
                     var pos = this.selectionStart;
@@ -27,6 +26,7 @@
                         i < 5 && (i = 3);
                         new_value = new_value.slice(0, i)
                     }
+
                     var reg = matrix.substr(0, this.value.length).replace(/_+/g,
                         function (a) {
                             return "\\d{1," + a.length + "}"
