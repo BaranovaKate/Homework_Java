@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Create User</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <script>
         window.addEventListener("DOMContentLoaded", function () {
             [].forEach.call(document.querySelectorAll('.tel'), function (input) {
@@ -48,6 +49,16 @@
     </script>
 
 </head>
+<style>
+    .form-group-button {
+        margin-top: 20px;
+    }
+    .form-group{
+        width: 50%;
+        margin-left: 300px;
+
+    }
+</style>
 <body>
 <div class="container mt-5">
     <form action="/user" method="post">
@@ -59,7 +70,7 @@
         <% } %>
         <div class="form-group">
             <label for="username">Username</label>
-            <input type="text" class="form-control" id="username" name="username" required>
+            <input type="text" class="form-control" id="username" name="username" value="<c:out value="${requestScope.username}"/> ">
         </div>
         <div class="form-group">
             <label for="password">Password</label>
@@ -67,38 +78,41 @@
         </div>
         <div class="form-group">
             <label for="firstName">First Name</label>
-            <input type="text" class="form-control" id="firstName" name="firstName" required>
+            <input type="text" class="form-control" id="firstName" name="firstName" value="<c:out value="${requestScope.firstName}"/> ">
         </div>
         <div class="form-group">
             <label for="lastName">Last Name</label>
-            <input type="text" class="form-control" id="lastName" name="lastName" required>
+            <input type="text" class="form-control" id="lastName" name="lastName" value="<c:out value="${requestScope.lastName}"/> ">
         </div>
         <div class="form-group">
             <label for="middleName">Middle Name</label>
-            <input type="text" class="form-control" id="middleName" name="middleName" required>
+            <input type="text" class="form-control" id="middleName" name="middleName" value="<c:out value="${requestScope.middleName}"/> ">
         </div>
         <div class="form-group">
             <label for="gender">Gender</label>
-            <select class="form-control" id="gender" name="gender" required>
+            <select class="form-control" id="gender" name="gender" value="<c:out value="${requestScope.gender}"/> ">
                 <option value="male">Male</option>
                 <option value="female">Female</option>
             </select>
         </div>
         <div class="form-group">
             <label for="dob">Date of Birth</label>
-            <input type="date" class="form-control" id="dob" name="dob" required>
+            <input type="date" class="form-control" id="dob" name="dob" value="<c:out value="${requestScope.dob}"/> ">
         </div>
         <div class="form-group">
             <label for="city">City</label>
-            <input type="text" class="form-control" id="city" name="city" required>
+            <input type="text" class="form-control" id="city" name="city" value="<c:out value="${requestScope.city}"/> ">
         </div>
         <div class="form-group">
             <label for="phoneNumber">Phone Number</label>
-            <input type="tel" class="form-control tel" id="phoneNumber" name="phoneNumber" required>
+            <input type="tel" class="form-control tel" id="phoneNumber" name="phoneNumber" value="<c:out value="${requestScope.phoneNumber}"/> ">
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <div class="form-group form-group-button">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+<%--        <button type="submit" class="btn btn-primary">Submit</button>--%>
     </form>
 </div>
-<script src="../js/bootstrap.bundle.min.js"></script>
+<script href="bootstrap.bundle.min.js"></script>
 </body>
 </html>
